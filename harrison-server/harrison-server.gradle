@@ -1,0 +1,23 @@
+apply plugin: "org.springframework.boot"
+
+ext {
+  springConfigLocation = System.getProperty("spring.config.location", "${System.getProperty("user.home")}/.spinnaker/")
+  repackage = System.getProperty("springBoot.repackage", "false")
+}
+
+springBoot {
+  mainClass = "com.netflix.spinnaker.harrison.server.MainKt"
+}
+
+tasks.withType(org.springframework.boot.gradle.run.BootRunTask) {
+  systemProperty("spring.config.location", project.springConfigLocation)
+}
+
+dependencies {
+  compile project(":harrison-core")
+
+  compile "org.springframework.boot:spring-boot-starter-actuator:1.5.+"
+  compile "org.springframework.boot:spring-boot-starter-web:1.5.+"
+  compile "org.springframework.boot:spring-boot-starter-data-rest:1.5.+"
+}
+
