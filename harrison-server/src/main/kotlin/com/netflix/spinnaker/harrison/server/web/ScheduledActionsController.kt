@@ -20,8 +20,8 @@ import com.com.netflix.spinnaker.harrison.api.ResponseWrapper
 import com.com.netflix.spinnaker.harrison.api.ScheduledActionApi
 import com.com.netflix.spinnaker.harrison.api.TriggerHistory
 import com.netflix.spinnaker.harrison.persistence.ScheduledActionRepository
-import com.netflix.spinnaker.harrison.server.model.ScheduledActionModelConverter
-import com.netflix.spinnaker.harrison.server.model.TriggerHistoryModelConverter
+import com.netflix.spinnaker.harrison.model.ScheduledActionModelConverter
+import com.netflix.spinnaker.harrison.model.TriggerHistoryModelConverter
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod.*

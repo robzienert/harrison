@@ -13,33 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.netflix.spinnaker.harrison.server.model
+package com.netflix.spinnaker.harrison.model
 
-import com.com.netflix.spinnaker.harrison.api.TriggerHistory
-import com.com.netflix.spinnaker.harrison.api.TriggerHistoryApi
+import com.com.netflix.spinnaker.harrison.api.ScheduledAction
+import com.com.netflix.spinnaker.harrison.api.ScheduledActionApi
 import com.netflix.spinnaker.harrison.ModelConverter
-import com.netflix.spinnaker.harrison.TriggerHistoryImpl
+import com.netflix.spinnaker.harrison.ScheduledActionImpl
 import org.springframework.stereotype.Component
 
 @Component
-class TriggerHistoryModelConverter : ModelConverter<TriggerHistory, TriggerHistoryImpl, TriggerHistoryApi> {
+class ScheduledActionModelConverter : ModelConverter<ScheduledAction, ScheduledActionImpl, ScheduledActionApi> {
 
-  override fun toExternal(model: TriggerHistoryImpl): TriggerHistoryApi {
+  override fun toExternal(model: ScheduledActionImpl): ScheduledActionApi {
     return model.run {
-      TriggerHistoryApi(
-        scheduledAction = scheduledAction,
-        scheduledTime = scheduledTime,
-        actualTime = actualTime
+      ScheduledActionApi(
+        id = id,
+        schedule = schedule,
+        exclusions = exclusions,
+        action = action
       )
     }
   }
 
-  override fun toInternal(model: TriggerHistoryApi): TriggerHistoryImpl {
+  override fun toInternal(model: ScheduledActionApi): ScheduledActionImpl {
     return model.run {
-      TriggerHistoryImpl(
-        scheduledAction = scheduledAction,
-        scheduledTime = scheduledTime,
-        actualTime = actualTime
+      ScheduledActionImpl(
+        id = id,
+        schedule = schedule,
+        exclusions = exclusions,
+        action = action
       )
     }
   }
