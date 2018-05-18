@@ -29,3 +29,8 @@ Named after John Harrison, inventor of the marine chronometer. It's important to
 
 [1]: https://github.com/spinnaker/keiko
 [2]: https://github.com/spinnaker
+
+[![CircleCI](https://circleci.com/gh/robzienert/harrison/tree/master.svg?style=svg&circle-token=58c746a0957d2f41e148659c8de300cec2fa4e83)](https://circleci.com/gh/robzienert/harrison/tree/master)
+[![license](https://img.shields.io/github/license/robzienert/harrison.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+[![GitHub issues](https://img.shields.io/github/issues/robzienert/harrison.svg)](https://github.com/robfletcher/strikt/issues)
+![GitHub top language](https://img.shields.io/github/languages/top/robfletcher/strikt.svg)
