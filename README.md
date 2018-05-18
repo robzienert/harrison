@@ -23,7 +23,7 @@ _TODO_
 
 Harrison can (and should!) be used totally separately from [Spinnaker](2). Aside from using front50 as an persistence option, there are no integrations.
 
-## Why Harrison
+## Why "Harrison"
 
 Named after John Harrison, inventor of the marine chronometer. It's important to have a nautical themed name.
 
