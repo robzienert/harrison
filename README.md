@@ -9,7 +9,7 @@ An extensible, distributed scheduled actions library & service.
 
 Harrison is built primarily as a [Keiko](1) extension, so it's first and foremost a library, but it ships with an optional web service container as well.
 
-**NOTE ON PLUGINS**: Modules with external dependencies (aside from Keiko) are all optional. Using Harrison does not force you into the built-in dependencies if you want to add new plugins.
+**NOTE ON PLUGINS**: Modules with external service dependencies (aside from Keiko) are all optional. Using Harrison does not force you into the built-in dependencies if you want to add new plugins.
 
 ## Usage as a Library
 
