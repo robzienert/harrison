@@ -13,20 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.netflix.spinnaker.harrison
+package com.com.netflix.spinnaker.harrison.api
 
 import java.time.Instant
 
-data class ScheduledAction(
-  val schedule: Schedule,
-  val exceptions: List<ScheduleException>,
-  val startTime: Instant,
-  val endTime: Instant,
-  val callback: ActionCallback
-)
+interface TriggerHistory {
+  val scheduledAction: ScheduledAction
+  val scheduledTime: Instant
+  val actualTime: Instant
+}
 
-interface Schedule
-
-interface ScheduleException
-
-interface ActionCallback
+data class TriggerHistoryApi(
+  override val scheduledAction: ScheduledAction,
+  override val scheduledTime: Instant,
+  override val actualTime: Instant
+) : TriggerHistory

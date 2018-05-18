@@ -12,11 +12,25 @@
             "locked": "2.9.5",
             "requested": "2.9.5"
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "project": true
+        },
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "locked": "2.7.3",
             "requested": "2.7.3"
         },
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "locked": "2.7.3",
+            "requested": "2.7.3"
+        },
+        "com.squareup.okhttp3:okhttp": {
+            "locked": "3.10.0",
+            "requested": "3.10.0"
+        },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api"
+            ],
             "locked": "1.2.21",
             "requested": "1.2.21"
         }
@@ -34,11 +48,25 @@
             "locked": "2.9.5",
             "requested": "2.9.5"
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "project": true
+        },
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "locked": "2.7.3",
             "requested": "2.7.3"
         },
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "locked": "2.7.3",
+            "requested": "2.7.3"
+        },
+        "com.squareup.okhttp3:okhttp": {
+            "locked": "3.10.0",
+            "requested": "3.10.0"
+        },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api"
+            ],
             "locked": "1.2.21",
             "requested": "1.2.21"
         }
@@ -56,11 +84,25 @@
             "locked": "2.9.5",
             "requested": "2.9.5"
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "project": true
+        },
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "locked": "2.7.3",
             "requested": "2.7.3"
         },
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "locked": "2.7.3",
+            "requested": "2.7.3"
+        },
+        "com.squareup.okhttp3:okhttp": {
+            "locked": "3.10.0",
+            "requested": "3.10.0"
+        },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api"
+            ],
             "locked": "1.2.21",
             "requested": "1.2.21"
         }
@@ -78,11 +120,25 @@
             "locked": "2.9.5",
             "requested": "2.9.5"
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "project": true
+        },
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "locked": "2.7.3",
             "requested": "2.7.3"
         },
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "locked": "2.7.3",
+            "requested": "2.7.3"
+        },
+        "com.squareup.okhttp3:okhttp": {
+            "locked": "3.10.0",
+            "requested": "3.10.0"
+        },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api"
+            ],
             "locked": "1.2.21",
             "requested": "1.2.21"
         }
@@ -120,11 +176,25 @@
             "locked": "2.9.5",
             "requested": "2.9.5"
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "project": true
+        },
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "locked": "2.7.3",
             "requested": "2.7.3"
         },
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "locked": "2.7.3",
+            "requested": "2.7.3"
+        },
+        "com.squareup.okhttp3:okhttp": {
+            "locked": "3.10.0",
+            "requested": "3.10.0"
+        },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api"
+            ],
             "locked": "1.2.21",
             "requested": "1.2.21"
         }
@@ -142,15 +212,29 @@
             "locked": "2.9.5",
             "requested": "2.9.5"
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "project": true
+        },
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "locked": "2.7.3",
             "requested": "2.7.3"
+        },
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "locked": "2.7.3",
+            "requested": "2.7.3"
+        },
+        "com.squareup.okhttp3:okhttp": {
+            "locked": "3.10.0",
+            "requested": "3.10.0"
         },
         "io.strikt:strikt-core": {
             "locked": "0.4.0",
             "requested": "+"
         },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api"
+            ],
             "locked": "1.2.21",
             "requested": "1.2.21"
         },
@@ -172,15 +256,29 @@
             "locked": "2.9.5",
             "requested": "2.9.5"
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "project": true
+        },
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "locked": "2.7.3",
             "requested": "2.7.3"
+        },
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "locked": "2.7.3",
+            "requested": "2.7.3"
+        },
+        "com.squareup.okhttp3:okhttp": {
+            "locked": "3.10.0",
+            "requested": "3.10.0"
         },
         "io.strikt:strikt-core": {
             "locked": "0.4.0",
             "requested": "+"
         },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api"
+            ],
             "locked": "1.2.21",
             "requested": "1.2.21"
         },
@@ -202,15 +300,29 @@
             "locked": "2.9.5",
             "requested": "2.9.5"
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "project": true
+        },
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "locked": "2.7.3",
             "requested": "2.7.3"
+        },
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "locked": "2.7.3",
+            "requested": "2.7.3"
+        },
+        "com.squareup.okhttp3:okhttp": {
+            "locked": "3.10.0",
+            "requested": "3.10.0"
         },
         "io.strikt:strikt-core": {
             "locked": "0.4.0",
             "requested": "+"
         },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api"
+            ],
             "locked": "1.2.21",
             "requested": "1.2.21"
         },
@@ -232,15 +344,29 @@
             "locked": "2.9.5",
             "requested": "2.9.5"
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "project": true
+        },
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "locked": "2.7.3",
             "requested": "2.7.3"
+        },
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "locked": "2.7.3",
+            "requested": "2.7.3"
+        },
+        "com.squareup.okhttp3:okhttp": {
+            "locked": "3.10.0",
+            "requested": "3.10.0"
         },
         "io.strikt:strikt-core": {
             "locked": "0.4.0",
             "requested": "+"
         },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api"
+            ],
             "locked": "1.2.21",
             "requested": "1.2.21"
         },

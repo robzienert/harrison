@@ -18,29 +18,36 @@
             ],
             "locked": "2.9.5"
         },
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "project": true
+        },
         "com.netflix.spinnaker.harrison:harrison-core": {
             "project": true
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "firstLevelTransitive": [
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "2.7.3"
         },
-        "com.squareup.okhttp3:logging-interceptor": {
-            "locked": "3.9.1",
-            "requested": "3.9.1"
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "2.7.3"
         },
-        "com.squareup.retrofit2:converter-jackson": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
-        },
-        "com.squareup.retrofit2:retrofit": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
+        "com.squareup.okhttp3:okhttp": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "3.10.0"
         },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
             "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api",
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "1.2.21",
@@ -57,10 +64,6 @@
         "org.springframework.boot:spring-boot-starter-web": {
             "locked": "1.5.13.RELEASE",
             "requested": "1.5.+"
-        },
-        "redis.clients:jedis": {
-            "locked": "2.9.0",
-            "requested": "2.9.0"
         }
     },
     "compileClasspath": {
@@ -82,29 +85,36 @@
             ],
             "locked": "2.9.5"
         },
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "project": true
+        },
         "com.netflix.spinnaker.harrison:harrison-core": {
             "project": true
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "firstLevelTransitive": [
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "2.7.3"
         },
-        "com.squareup.okhttp3:logging-interceptor": {
-            "locked": "3.9.1",
-            "requested": "3.9.1"
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "2.7.3"
         },
-        "com.squareup.retrofit2:converter-jackson": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
-        },
-        "com.squareup.retrofit2:retrofit": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
+        "com.squareup.okhttp3:okhttp": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "3.10.0"
         },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
             "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api",
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "1.2.21",
@@ -121,10 +131,6 @@
         "org.springframework.boot:spring-boot-starter-web": {
             "locked": "1.5.9.RELEASE",
             "requested": "1.5.+"
-        },
-        "redis.clients:jedis": {
-            "locked": "2.9.0",
-            "requested": "2.9.0"
         }
     },
     "compileOnly": {
@@ -146,29 +152,36 @@
             ],
             "locked": "2.9.5"
         },
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "project": true
+        },
         "com.netflix.spinnaker.harrison:harrison-core": {
             "project": true
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "firstLevelTransitive": [
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "2.7.3"
         },
-        "com.squareup.okhttp3:logging-interceptor": {
-            "locked": "3.9.1",
-            "requested": "3.9.1"
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "2.7.3"
         },
-        "com.squareup.retrofit2:converter-jackson": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
-        },
-        "com.squareup.retrofit2:retrofit": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
+        "com.squareup.okhttp3:okhttp": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "3.10.0"
         },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
             "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api",
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "1.2.21",
@@ -185,10 +198,6 @@
         "org.springframework.boot:spring-boot-starter-web": {
             "locked": "1.5.9.RELEASE",
             "requested": "1.5.+"
-        },
-        "redis.clients:jedis": {
-            "locked": "2.9.0",
-            "requested": "2.9.0"
         }
     },
     "default": {
@@ -210,29 +219,36 @@
             ],
             "locked": "2.9.5"
         },
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "project": true
+        },
         "com.netflix.spinnaker.harrison:harrison-core": {
             "project": true
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "firstLevelTransitive": [
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "2.7.3"
         },
-        "com.squareup.okhttp3:logging-interceptor": {
-            "locked": "3.9.1",
-            "requested": "3.9.1"
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "2.7.3"
         },
-        "com.squareup.retrofit2:converter-jackson": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
-        },
-        "com.squareup.retrofit2:retrofit": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
+        "com.squareup.okhttp3:okhttp": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "3.10.0"
         },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
             "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api",
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "1.2.21",
@@ -249,10 +265,6 @@
         "org.springframework.boot:spring-boot-starter-web": {
             "locked": "1.5.9.RELEASE",
             "requested": "1.5.+"
-        },
-        "redis.clients:jedis": {
-            "locked": "2.9.0",
-            "requested": "2.9.0"
         }
     },
     "junitPlatform": {
@@ -294,29 +306,36 @@
             ],
             "locked": "2.9.5"
         },
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "project": true
+        },
         "com.netflix.spinnaker.harrison:harrison-core": {
             "project": true
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "firstLevelTransitive": [
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "2.7.3"
         },
-        "com.squareup.okhttp3:logging-interceptor": {
-            "locked": "3.9.1",
-            "requested": "3.9.1"
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "2.7.3"
         },
-        "com.squareup.retrofit2:converter-jackson": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
-        },
-        "com.squareup.retrofit2:retrofit": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
+        "com.squareup.okhttp3:okhttp": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "3.10.0"
         },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
             "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api",
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "1.2.21",
@@ -333,10 +352,6 @@
         "org.springframework.boot:spring-boot-starter-web": {
             "locked": "1.5.9.RELEASE",
             "requested": "1.5.+"
-        },
-        "redis.clients:jedis": {
-            "locked": "2.9.0",
-            "requested": "2.9.0"
         }
     },
     "testCompile": {
@@ -358,26 +373,32 @@
             ],
             "locked": "2.9.5"
         },
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "project": true
+        },
         "com.netflix.spinnaker.harrison:harrison-core": {
             "project": true
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "firstLevelTransitive": [
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "2.7.3"
         },
-        "com.squareup.okhttp3:logging-interceptor": {
-            "locked": "3.9.1",
-            "requested": "3.9.1"
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "2.7.3"
         },
-        "com.squareup.retrofit2:converter-jackson": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
-        },
-        "com.squareup.retrofit2:retrofit": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
+        "com.squareup.okhttp3:okhttp": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "3.10.0"
         },
         "io.strikt:strikt-core": {
             "locked": "0.4.0",
@@ -385,6 +406,7 @@
         },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
             "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api",
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "1.2.21",
@@ -405,10 +427,6 @@
         "org.springframework.boot:spring-boot-starter-web": {
             "locked": "1.5.9.RELEASE",
             "requested": "1.5.+"
-        },
-        "redis.clients:jedis": {
-            "locked": "2.9.0",
-            "requested": "2.9.0"
         }
     },
     "testCompileClasspath": {
@@ -430,26 +448,32 @@
             ],
             "locked": "2.9.5"
         },
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "project": true
+        },
         "com.netflix.spinnaker.harrison:harrison-core": {
             "project": true
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "firstLevelTransitive": [
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "2.7.3"
         },
-        "com.squareup.okhttp3:logging-interceptor": {
-            "locked": "3.9.1",
-            "requested": "3.9.1"
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "2.7.3"
         },
-        "com.squareup.retrofit2:converter-jackson": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
-        },
-        "com.squareup.retrofit2:retrofit": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
+        "com.squareup.okhttp3:okhttp": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "3.10.0"
         },
         "io.strikt:strikt-core": {
             "locked": "0.4.0",
@@ -457,6 +481,7 @@
         },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
             "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api",
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "1.2.21",
@@ -477,10 +502,6 @@
         "org.springframework.boot:spring-boot-starter-web": {
             "locked": "1.5.9.RELEASE",
             "requested": "1.5.+"
-        },
-        "redis.clients:jedis": {
-            "locked": "2.9.0",
-            "requested": "2.9.0"
         }
     },
     "testCompileOnly": {
@@ -502,26 +523,32 @@
             ],
             "locked": "2.9.5"
         },
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "project": true
+        },
         "com.netflix.spinnaker.harrison:harrison-core": {
             "project": true
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "firstLevelTransitive": [
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "2.7.3"
         },
-        "com.squareup.okhttp3:logging-interceptor": {
-            "locked": "3.9.1",
-            "requested": "3.9.1"
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "2.7.3"
         },
-        "com.squareup.retrofit2:converter-jackson": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
-        },
-        "com.squareup.retrofit2:retrofit": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
+        "com.squareup.okhttp3:okhttp": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "3.10.0"
         },
         "io.strikt:strikt-core": {
             "locked": "0.4.0",
@@ -529,6 +556,7 @@
         },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
             "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api",
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "1.2.21",
@@ -549,10 +577,6 @@
         "org.springframework.boot:spring-boot-starter-web": {
             "locked": "1.5.9.RELEASE",
             "requested": "1.5.+"
-        },
-        "redis.clients:jedis": {
-            "locked": "2.9.0",
-            "requested": "2.9.0"
         }
     },
     "testRuntime": {
@@ -574,26 +598,32 @@
             ],
             "locked": "2.9.5"
         },
+        "com.netflix.spinnaker.harrison:harrison-api": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "project": true
+        },
         "com.netflix.spinnaker.harrison:harrison-core": {
             "project": true
         },
-        "com.netflix.spinnaker.keiko:keiko-core": {
+        "com.netflix.spinnaker.keiko:keiko-mem": {
             "firstLevelTransitive": [
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "2.7.3"
         },
-        "com.squareup.okhttp3:logging-interceptor": {
-            "locked": "3.9.1",
-            "requested": "3.9.1"
+        "com.netflix.spinnaker.keiko:keiko-spring": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "2.7.3"
         },
-        "com.squareup.retrofit2:converter-jackson": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
-        },
-        "com.squareup.retrofit2:retrofit": {
-            "locked": "2.4.0",
-            "requested": "2.4.0"
+        "com.squareup.okhttp3:okhttp": {
+            "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-core"
+            ],
+            "locked": "3.10.0"
         },
         "io.strikt:strikt-core": {
             "locked": "0.4.0",
@@ -601,6 +631,7 @@
         },
         "org.jetbrains.kotlin:kotlin-stdlib-jdk8": {
             "firstLevelTransitive": [
+                "com.netflix.spinnaker.harrison:harrison-api",
                 "com.netflix.spinnaker.harrison:harrison-core"
             ],
             "locked": "1.2.21",
@@ -629,10 +660,6 @@
         "org.springframework.boot:spring-boot-starter-web": {
             "locked": "1.5.9.RELEASE",
             "requested": "1.5.+"
-        },
-        "redis.clients:jedis": {
-            "locked": "2.9.0",
-            "requested": "2.9.0"
         }
     }
 }

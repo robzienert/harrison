@@ -15,12 +15,15 @@
  */
 package com.netflix.spinnaker.harrison.server
 
+import com.netflix.spinnaker.harrison.config.HarrisonConfiguration
+import com.netflix.spinnaker.harrison.server.config.WebConfiguration
 import javafx.concurrent.Worker
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.builder.SpringApplicationBuilder
 import org.springframework.boot.web.support.SpringBootServletInitializer
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
+import org.springframework.context.annotation.Import
 import org.springframework.scheduling.annotation.EnableAsync
 import org.springframework.scheduling.annotation.EnableScheduling
 
@@ -41,6 +44,7 @@ object MainDefaults {
 @EnableScheduling
 @EnableAsync
 @EnableAutoConfiguration
+@Import(HarrisonConfiguration::class, WebConfiguration::class)
 @ComponentScan(basePackages = ["com.netflix.spinnaker.harrison"])
 open class Main : SpringBootServletInitializer() {
 

@@ -1,8 +1,14 @@
 dependencies {
-  compile "com.netflix.spinnaker.keiko:keiko-core:2.7.3"
+  compile project(":harrison-api")
+
+  compile "com.netflix.spinnaker.keiko:keiko-spring:2.7.3"
+  compile "com.netflix.spinnaker.keiko:keiko-mem:2.7.3"
   compile "com.cronutils:cron-utils:7.0.1"
 
   // json
   compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion"
   compile "com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion"
+
+  // http handler
+  compile 'com.squareup.okhttp3:okhttp:3.10.0'
 }
