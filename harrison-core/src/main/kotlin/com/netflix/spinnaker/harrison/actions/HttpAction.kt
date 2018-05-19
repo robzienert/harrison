@@ -16,11 +16,38 @@
 package com.netflix.spinnaker.harrison.actions
 
 import com.com.netflix.spinnaker.harrison.api.Action
+import okhttp3.MediaType
+import okhttp3.Request
+import okhttp3.RequestBody
 
+/**
+ * TODO rz - Add retry controls
+ * TODO rz - Should this go into the api module?
+ */
 data class HttpAction(
   val method: String,
   val url: String,
   val body: String? = null,
   val bodyMediaType: String? = null,
   val headers: Map<String, String> = mapOf()
-) : Action
+) : Action {
+
+  internal fun toRequest(): Request {
+    val request = Request.Builder()
+      .method(method, requestBody(body, bodyMediaType))
+      .url(url)
+
+    headers.forEach { k, v ->
+      request.addHeader(k, v)
+    }
+
+    return request.build()
+  }
+
+  private fun requestBody(body: String?, bodyContentType: String?): RequestBody? {
+    if (body == null || bodyContentType == null) {
+      return null
+    }
+    return RequestBody.create(MediaType.parse(bodyContentType), body)
+  }
+}

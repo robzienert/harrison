@@ -5,19 +5,9 @@ ext {
   repackage = System.getProperty("springBoot.repackage", "false")
 }
 
-springBoot {
-  mainClass = "com.netflix.spinnaker.harrison.server.MainKt"
-}
-
-tasks.withType(org.springframework.boot.gradle.run.BootRunTask) {
-  systemProperty("spring.config.location", project.springConfigLocation)
-}
-
 dependencies {
   compile project(":harrison-core")
 
-  compile "org.springframework.boot:spring-boot-starter-actuator:1.5.+"
-  compile "org.springframework.boot:spring-boot-starter-web:1.5.+"
-  compile "org.springframework.boot:spring-boot-starter-data-rest:1.5.+"
+  compile "org.springframework.boot:spring-boot-starter-web:2.+" lock '2.0.2.RELEASE'
+  compile "org.springframework.boot:spring-boot-starter-data-rest:2.+" lock '2.0.2.RELEASE'
 }
-

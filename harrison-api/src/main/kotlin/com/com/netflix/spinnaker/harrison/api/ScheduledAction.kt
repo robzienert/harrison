@@ -15,7 +15,6 @@
  */
 package com.com.netflix.spinnaker.harrison.api
 
-import java.time.Instant
 import java.util.*
 
 interface ScheduledAction {
@@ -26,26 +25,6 @@ interface ScheduledAction {
 }
 
 /**
- * Marker interface for Schedule models
- */
-interface Schedule {
-  val startTime: Instant?
-  val endTime: Instant?
-}
-
-/**
- * Marker interface for Schedule Exception models
- */
-interface Exclusion {
-  fun shouldExclude(nextFireTime: Instant): Boolean
-}
-
-/**
- * Marker for action models
- */
-interface Action
-
-/**
  * External implementation of [ScheduledAction]
  */
 data class ScheduledActionApi(
@@ -54,4 +33,3 @@ data class ScheduledActionApi(
   override val exclusions: List<Exclusion> = listOf(),
   override val action: Action
 ) : ScheduledAction
-
