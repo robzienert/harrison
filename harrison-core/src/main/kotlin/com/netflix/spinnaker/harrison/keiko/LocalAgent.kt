@@ -13,24 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.netflix.spinnaker.harrison.scheduling
+package com.netflix.spinnaker.harrison.keiko
 
-import com.com.netflix.spinnaker.harrison.api.Schedule
+import com.netflix.spinnaker.q.Queue
+import org.slf4j.LoggerFactory
+import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
+import java.time.Duration
 
+/**
+ * Ensures that the queue has all system-level scheduling messages on the queue.
+ */
 @Component
-class SchedulerProvider(private val schedulers: List<Scheduler>) {
+class LocalAgent(private val queue: Queue) {
 
-  fun provide(schedule: Schedule): Scheduler {
-    return schedulers.find { it.supports(schedule) } ?: throw SchedulerNotFound(schedule.javaClass)
-  }
+  private val log = LoggerFactory.getLogger(javaClass)
 
-  fun chained(schedule: Schedule, callback: (Scheduler) -> Unit) {
-    schedulers
-      .filter { it.supports(schedule) }
-      .forEach(callback)
+  @Scheduled(fixedDelay = 15_000)
+  fun ensureRefreshScheduleMessage() {
+    log.debug("Ensuring refresh schedule message exists")
+    queue.ensure(RefreshSchedule(), Duration.ofSeconds(30))
   }
 }
-
-class SchedulerNotFound(schedule: Class<Schedule>)
-  : RuntimeException("Could not find scheduler for ${schedule.simpleName}")

@@ -24,4 +24,19 @@ class SimpleSchedule(
   override val endTime: Instant?,
   val fixedDelay: Duration,
   val maxTimes: Int? = null
-) : Schedule
+) : Schedule {
+
+  companion object {
+
+    /**
+     * Creates a [SimpleSchedule] that will execute only once at [startTime].
+     */
+    fun once(startTime: Instant) =
+      SimpleSchedule(
+        startTime = startTime,
+        endTime = null,
+        fixedDelay = Duration.ZERO,
+        maxTimes = 1
+      )
+  }
+}

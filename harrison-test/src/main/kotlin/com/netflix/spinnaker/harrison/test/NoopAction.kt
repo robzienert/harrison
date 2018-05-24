@@ -13,20 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.com.netflix.spinnaker.harrison.api
+package com.netflix.spinnaker.harrison.test
 
-import java.time.Instant
+import com.com.netflix.spinnaker.harrison.api.Action
 
-interface TriggerHistory {
-  val scheduledAction: ScheduledAction
-  val scheduledTime: Instant
-  val actualTime: Instant
-  val counter: Long
-}
-
-data class TriggerHistoryApi(
-  override val scheduledAction: ScheduledAction,
-  override val scheduledTime: Instant,
-  override val actualTime: Instant,
-  override val counter: Long
-) : TriggerHistory
+class NoopAction : Action

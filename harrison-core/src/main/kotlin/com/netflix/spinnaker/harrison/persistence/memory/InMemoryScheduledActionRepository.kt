@@ -20,8 +20,6 @@ import com.netflix.spinnaker.harrison.TriggerHistoryImpl
 import com.netflix.spinnaker.harrison.persistence.ScheduledActionRepository
 import com.netflix.spinnaker.harrison.persistence.TriggerFireEvent
 import org.slf4j.LoggerFactory
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
-import org.springframework.stereotype.Component
 import java.time.Instant
 import java.util.concurrent.ConcurrentHashMap
 
@@ -54,19 +52,30 @@ class InMemoryScheduledActionRepository : ScheduledActionRepository {
       log.error("Attempted to record trigger event for non-existent scheduled action: $id")
       return
     }
-    histories.getOrPut(id, { mutableListOf() }).add(event)
+    histories.getOrPut(id, { mutableListOf() }).also {
+      it.add(event.copy(counter = it.size.toLong() + 1))
+    }
   }
 
   override fun retrieveHistory(id: String): List<TriggerHistoryImpl> {
     val scheduledAction = scheduledActions[id] ?: return listOf()
     return histories[id]
-      ?.map {
-        TriggerHistoryImpl(
-          scheduledAction = scheduledAction,
-          scheduledTime = Instant.ofEpochMilli(it.scheduledTimeEpoch),
-          actualTime = Instant.ofEpochMilli(it.actualTimeEpoch)
-        )
-      }
+      ?.map { it.toHistory(scheduledAction) }
       ?: listOf()
   }
+
+  override fun retrieveLatestTrigger(id: String): TriggerHistoryImpl? {
+    return scheduledActions[id]
+      ?.let { scheduledAction ->
+        histories[id]?.get(0)?.run { toHistory(scheduledAction) }
+      }
+  }
+
+  private fun TriggerFireEvent.toHistory(scheduledAction: ScheduledActionImpl) =
+    TriggerHistoryImpl(
+      scheduledAction = scheduledAction,
+      scheduledTime = Instant.ofEpochMilli(scheduledTimeEpoch),
+      actualTime = Instant.ofEpochMilli(actualTimeEpoch),
+      counter = counter
+    )
 }

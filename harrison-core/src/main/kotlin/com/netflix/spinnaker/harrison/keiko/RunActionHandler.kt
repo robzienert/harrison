@@ -20,7 +20,6 @@ import com.netflix.spinnaker.harrison.persistence.ScheduledActionRepository
 import com.netflix.spinnaker.harrison.persistence.TriggerFireEvent
 import com.netflix.spinnaker.q.MessageHandler
 import com.netflix.spinnaker.q.Queue
-import org.slf4j.LoggerFactory
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor
 import org.springframework.stereotype.Component
 import java.time.Clock
@@ -33,8 +32,6 @@ class RunActionHandler(
   private val threadPool: ThreadPoolTaskExecutor,
   private val clock: Clock
 ) : MessageHandler<RunAction> {
-
-  private val log = LoggerFactory.getLogger(javaClass)
 
   override val messageType = RunAction::class.java
 

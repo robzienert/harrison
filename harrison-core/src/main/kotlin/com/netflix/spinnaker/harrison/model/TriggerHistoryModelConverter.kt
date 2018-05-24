@@ -29,7 +29,8 @@ class TriggerHistoryModelConverter : ModelConverter<TriggerHistory, TriggerHisto
       TriggerHistoryApi(
         scheduledAction = scheduledAction,
         scheduledTime = scheduledTime,
-        actualTime = actualTime
+        actualTime = actualTime,
+        counter = counter
       )
     }
   }
@@ -39,7 +40,8 @@ class TriggerHistoryModelConverter : ModelConverter<TriggerHistory, TriggerHisto
       TriggerHistoryImpl(
         scheduledAction = scheduledAction,
         scheduledTime = scheduledTime,
-        actualTime = actualTime
+        actualTime = actualTime,
+        counter = counter
       )
     }
   }

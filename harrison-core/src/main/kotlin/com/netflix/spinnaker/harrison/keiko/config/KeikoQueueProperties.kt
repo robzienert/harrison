@@ -13,20 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.com.netflix.spinnaker.harrison.api
+package com.netflix.spinnaker.harrison.keiko.config
 
-import java.time.Instant
+import org.springframework.boot.context.properties.ConfigurationProperties
 
-interface TriggerHistory {
-  val scheduledAction: ScheduledAction
-  val scheduledTime: Instant
-  val actualTime: Instant
-  val counter: Long
+@ConfigurationProperties("keiko.queue")
+class KeikoQueueProperties {
+  var enabled: Boolean = true
+  var handlerThreadNamePrefix: String = "handlers-"
+  var handlerCorePoolSize: Int = 20
+  var handlerMaxPoolSize: Int = 20
+  var fillExecutorEachCycle: Boolean = false
+  var requeueDelaySeconds: Long = 0
+  var requeueMaxJitterSeconds: Long = 0
 }
-
-data class TriggerHistoryApi(
-  override val scheduledAction: ScheduledAction,
-  override val scheduledTime: Instant,
-  override val actualTime: Instant,
-  override val counter: Long
-) : TriggerHistory

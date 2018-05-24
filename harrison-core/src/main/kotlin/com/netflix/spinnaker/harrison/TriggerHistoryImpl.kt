@@ -22,5 +22,6 @@ import java.time.Instant
 data class TriggerHistoryImpl(
   override val scheduledAction: ScheduledAction,
   override val scheduledTime: Instant,
-  override val actualTime: Instant
+  override val actualTime: Instant,
+  override val counter: Long
 ) : TriggerHistory

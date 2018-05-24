@@ -24,11 +24,15 @@ interface ScheduledActionRepository {
   fun delete(id: String)
   fun retrieve(id: String): ScheduledActionImpl?
   fun retrieveAll(): Iterable<ScheduledActionImpl>
+
+  // TODO rz - move out into a different repository; record expected expected trigger times as well
   fun recordTrigger(id: String, event: TriggerFireEvent)
+  fun retrieveLatestTrigger(id: String): TriggerHistoryImpl?
   fun retrieveHistory(id: String): List<TriggerHistoryImpl>
 }
 
 data class TriggerFireEvent(
   val scheduledTimeEpoch: Long,
-  val actualTimeEpoch: Long
+  val actualTimeEpoch: Long,
+  val counter: Long = 0L
 )

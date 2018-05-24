@@ -13,20 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.com.netflix.spinnaker.harrison.api
+package com.netflix.spinnaker.harrison.keiko
 
-import java.time.Instant
+import com.netflix.spinnaker.q.Activator
+import org.springframework.stereotype.Component
 
-interface TriggerHistory {
-  val scheduledAction: ScheduledAction
-  val scheduledTime: Instant
-  val actualTime: Instant
-  val counter: Long
+@Component
+class AlwaysOnActivator : Activator {
+  override val enabled = true
 }
-
-data class TriggerHistoryApi(
-  override val scheduledAction: ScheduledAction,
-  override val scheduledTime: Instant,
-  override val actualTime: Instant,
-  override val counter: Long
-) : TriggerHistory

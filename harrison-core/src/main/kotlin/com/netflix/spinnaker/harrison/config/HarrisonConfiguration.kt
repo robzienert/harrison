@@ -17,10 +17,11 @@ package com.netflix.spinnaker.harrison.config
 
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.databind.module.SimpleModule
+import com.fasterxml.jackson.databind.jsontype.NamedType
 import com.fasterxml.jackson.module.kotlin.KotlinModule
-import com.netflix.spinnaker.config.ObjectMapperSubtypeProperties
-import com.netflix.spinnaker.config.SpringObjectMapperConfigurer
+import com.netflix.spinnaker.harrison.keiko.RefreshSchedule
+import com.netflix.spinnaker.harrison.keiko.RunAction
+import com.netflix.spinnaker.harrison.keiko.config.KeikoConfiguration
 import com.netflix.spinnaker.harrison.persistence.ScheduledActionRepository
 import com.netflix.spinnaker.harrison.persistence.memory.InMemoryScheduledActionRepository
 import com.netflix.spinnaker.q.DeadMessageCallback
@@ -30,15 +31,15 @@ import com.netflix.spinnaker.q.metrics.EventPublisher
 import com.netflix.spinnaker.q.metrics.QueueEvent
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
-import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
+import org.springframework.context.annotation.Import
 import java.time.Clock
 
 @Configuration
 @ComponentScan("com.netflix.spinnaker.harrison")
-@EnableConfigurationProperties(ObjectMapperSubtypeProperties::class)
+@Import(KeikoConfiguration::class)
 open class HarrisonConfiguration {
 
   @Bean
@@ -46,16 +47,15 @@ open class HarrisonConfiguration {
   open fun systemClock(): Clock = Clock.systemDefaultZone()
 
   @Autowired
-  open fun objectMapper(mapper: ObjectMapper,
-                   objectMapperSubtypeProperties: ObjectMapperSubtypeProperties) {
+  open fun objectMapper(mapper: ObjectMapper) {
     mapper.apply {
       registerModule(KotlinModule())
       disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
 
-      SpringObjectMapperConfigurer(objectMapperSubtypeProperties.apply {
-        messagePackages += listOf("com.netflix.spinnaker.harrison.keiko")
-        attributePackages += listOf("com.netflix.spinnaker.harrison.keiko")
-      }).registerSubtypes(this)
+      registerSubtypes(
+        NamedType(RunAction::class.java, "harrison:runAction"),
+        NamedType(RefreshSchedule::class.java, "harrison:refreshSchedule")
+      )
     }
   }
 

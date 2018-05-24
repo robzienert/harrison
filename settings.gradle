@@ -11,7 +11,7 @@
 
 rootProject.name = 'harrison'
 
-include 'harrison-api', 'harrison-core', 'harrison-server'
+include 'harrison-api', 'harrison-core', 'harrison-server', 'harrison-test'
 
 def setBuildFile(project) {
   project.buildFileName = "${project.name}.gradle"

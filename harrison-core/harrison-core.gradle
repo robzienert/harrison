@@ -4,12 +4,14 @@ dependencies {
   compile "org.springframework.boot:spring-boot-starter-actuator:2.+" lock '2.0.2.RELEASE'
 
   // TODO rz - Keiko needs to get upgraded to spring 5
-  compile "com.netflix.spinnaker.keiko:keiko-spring:2.+" lock '2.8.0'
-  compile "com.netflix.spinnaker.keiko:keiko-mem:2.+" lock '2.8.0'
+//  compile "com.netflix.spinnaker.keiko:keiko-spring:2.+" lock '2.8.0'
+  compile "com.netflix.spinnaker.keiko:keiko-mem:2.+" lock '2.8.1'
 
   compile "com.cronutils:cron-utils:7.+" lock '7.0.1'
 
   compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.5"
   compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.5"
   compile 'com.squareup.okhttp3:okhttp:3.+' lock '3.10.0'
+
+  testCompile project(":harrison-test")
 }

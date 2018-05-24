@@ -21,31 +21,28 @@ import com.netflix.spinnaker.harrison.scheduling.SchedulerProvider
 import com.netflix.spinnaker.q.MessageHandler
 import com.netflix.spinnaker.q.Queue
 import org.slf4j.LoggerFactory
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 import java.time.Clock
 import java.time.Duration
-import java.util.concurrent.Executors
-import java.util.concurrent.TimeUnit.SECONDS
+import javax.annotation.PostConstruct
 
 @Component
 class RefreshScheduleHandler(
   override val queue: Queue,
   private val repository: ScheduledActionRepository,
   private val schedulerProvider: SchedulerProvider,
-  private val clock: Clock
+  private val clock: Clock,
+  @Value("\${harrison.handlers.refreshSchedule.intervalMs:15000}") private val refreshIntervalMs: Long
 ) : MessageHandler<RefreshSchedule> {
 
   private val log = LoggerFactory.getLogger(javaClass)
 
   override val messageType = RefreshSchedule::class.java
 
-  private val executor = Executors.newScheduledThreadPool(1)
-
-  init {
+  @PostConstruct
+  fun init() {
     queue.push(RefreshSchedule())
-    executor.scheduleWithFixedDelay({
-      queue.ensure(RefreshSchedule(), Duration.ofSeconds(30))
-    }, 0, 30, SECONDS)
   }
 
   override fun handle(message: RefreshSchedule) {
@@ -56,9 +53,6 @@ class RefreshScheduleHandler(
             .provide(action.schedule)
             .nextTrigger(action)
             ?.deliverAt
-            ?.takeIf { deliverAt ->
-              action.exclusions.none { it.shouldExclude(deliverAt) }
-            }
             ?.also {
               queue.ensure(
                 RunAction(action.id, it.toEpochMilli()),
@@ -70,6 +64,6 @@ class RefreshScheduleHandler(
           log.error("$e")
         }
       }
-    queue.ensure(RefreshSchedule(), Duration.ofSeconds(30))
+    queue.ensure(RefreshSchedule(), Duration.ofMillis(refreshIntervalMs))
   }
 }
